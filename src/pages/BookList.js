@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './BookList.module.css';
 
@@ -12,7 +12,7 @@ function BookList({ isDark, onToggleTheme, apiBaseUrl }) {
     fetchBooks();
   }, []);
 
-  const fetchBooks = async () => {
+  const fetchBooks = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -31,7 +31,7 @@ function BookList({ isDark, onToggleTheme, apiBaseUrl }) {
     } finally {
       setLoading(false);
     }
-  };
+  },[apiBaseUrl])
 
   const handleBookClick = (bookId) => {
     navigate(`/book/${bookId}`);

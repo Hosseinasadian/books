@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Chapter from '../components/Chapter';
 import styles from './BookDetail.module.css';
@@ -15,7 +15,7 @@ function BookDetail({ isDark, onToggleTheme, apiBaseUrl }) {
     fetchBookDetails();
   }, [bookId]);
 
-  const fetchBookDetails = async () => {
+  const fetchBookDetails = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -38,7 +38,7 @@ function BookDetail({ isDark, onToggleTheme, apiBaseUrl }) {
     } finally {
       setLoading(false);
     }
-  };
+  },[apiBaseUrl])
 
   const toggleChapter = (chapterId) => {
     setExpandedChapter(expandedChapter === chapterId ? null : chapterId);

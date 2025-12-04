@@ -35,7 +35,7 @@ jobs:
     - name: Build React app
       run: npm run build
       env:
-        REACT_APP_API_URL: https://book-api.onrender.com
+        REACT_APP_API_URL: https://book-api-8z8v.onrender.com/api
         PUBLIC_URL: /books.github.io
     
     - name: Upload build artifacts

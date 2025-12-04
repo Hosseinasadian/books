@@ -10,7 +10,6 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://book-api-8z8v.onr
 function App() {
   const [isDark, setIsDark] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
