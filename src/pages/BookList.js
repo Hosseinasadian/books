@@ -8,10 +8,6 @@ function BookList({ isDark, onToggleTheme, apiBaseUrl }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchBooks();
-  }, []);
-
   const fetchBooks = useCallback(async () => {
     try {
       setLoading(true);
@@ -32,6 +28,10 @@ function BookList({ isDark, onToggleTheme, apiBaseUrl }) {
       setLoading(false);
     }
   },[apiBaseUrl])
+
+  useEffect(() => {
+    fetchBooks();
+  }, [fetchBooks]);
 
   const handleBookClick = (bookId) => {
     navigate(`/book/${bookId}`);

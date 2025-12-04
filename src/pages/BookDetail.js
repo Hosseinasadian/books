@@ -11,10 +11,6 @@ function BookDetail({ isDark, onToggleTheme, apiBaseUrl }) {
   const [error, setError] = useState(null);
   const [expandedChapter, setExpandedChapter] = useState(null);
 
-  useEffect(() => {
-    fetchBookDetails();
-  }, [bookId]);
-
   const fetchBookDetails = useCallback(async () => {
     try {
       setLoading(true);
@@ -38,7 +34,11 @@ function BookDetail({ isDark, onToggleTheme, apiBaseUrl }) {
     } finally {
       setLoading(false);
     }
-  },[apiBaseUrl])
+  },[apiBaseUrl,bookId])
+
+  useEffect(() => {
+    fetchBookDetails();
+  }, [fetchBookDetails]);
 
   const toggleChapter = (chapterId) => {
     setExpandedChapter(expandedChapter === chapterId ? null : chapterId);
