@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+/* فونت فارسی Vazir */
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+
+:root {
+  /* متغیرهای تم روشن */
+  --color-bg: #f4f4f4;
+  --color-text: #222;
+  --color-card-bg: #ffffff;
+  --color-card-border: rgba(0,0,0,0.05);
+  --color-card-shadow: rgba(0,0,0,0.08);
+  --color-primary: #2c3e50;
+  --color-secondary: #666;
+  --color-accent: #4CAF50;
+  --color-header-border: rgba(0,0,0,0.1);
+  --color-button-bg: #f0f0f0;
+  --color-intro-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-theme="dark"] {
+  /* متغیرهای تم تاریک */
+  --color-bg: #121212;
+  --color-text: #eaeaea;
+  --color-card-bg: #1a1a1a;
+  --color-card-border: rgba(255,255,255,0.1);
+  --color-card-shadow: rgba(0,0,0,0.4);
+  --color-primary: #ffffff;
+  --color-secondary: #b0b0b0;
+  --color-accent: #81c784;
+  --color-header-border: rgba(255,255,255,0.15);
+  --color-button-bg: #333;
+  --color-intro-bg: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: 'Vazir', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background 0.3s, color 0.3s;
+  line-height: 1.6;
+  text-align: right;
+  direction: rtl;
+}
+
+.app {
   min-height: 100vh;
+}
+
+.loading-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.loading {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* استایل‌های عمومی برای دکمه‌ها */
+button {
+  font-family: 'Vazir', sans-serif;
+  cursor: pointer;
+}
+
+/* استایل‌های عمومی برای لینک‌ها */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* استایل‌های عمومی برای کارت‌ها */
+.card {
+  background: var(--color-card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 3px 12px var(--color-card-shadow);
+  transition: all 0.3s ease;
+}
+
+/* استایل‌های عمومی برای جداکننده‌ها */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--color-header-border);
+  margin: 20px 0;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
   }
 }

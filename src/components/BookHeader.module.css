@@ -1,0 +1,126 @@
+.bookHeader {
+  text-align: center;
+  padding: 35px 20px 15px;
+  position: relative;
+  direction: rtl;
+}
+
+.bookCover {
+  width: 250px;
+  max-width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+  border: 3px solid var(--color-card-bg);
+}
+
+.bookCover:hover {
+  transform: scale(1.03);
+}
+
+.bookTitle {
+  font-size: 28px;
+  margin: 0 0 15px 0;
+  padding: 0 25px;
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.4;
+  direction: rtl;
+  text-align: center;
+}
+
+.headerActions {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  left: auto;
+}
+
+.iconBtn {
+  font-size: 26px;
+  border: none;
+  background: var(--color-button-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.iconBtn:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* استایل‌های خاص برای حالت دارک */
+[data-theme="dark"] .bookCover {
+  border-color: #2c2c2c;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+[data-theme="dark"] .bookTitle {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .iconBtn {
+  color: #ffd700;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 768px) {
+  .headerActions {
+    top: 20px;
+    right: 15px;
+  }
+  
+  .bookTitle {
+    font-size: 24px;
+    padding: 0 20px;
+  }
+  
+  .bookCover {
+    width: 220px;
+  }
+  
+  .iconBtn {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookHeader {
+    padding: 25px 15px 10px;
+  }
+  
+  .bookTitle {
+    font-size: 22px;
+    padding: 0 15px;
+    margin-bottom: 10px;
+  }
+  
+  .bookCover {
+    width: 200px;
+    margin-bottom: 15px;
+  }
+  
+  .iconBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding: 8px;
+  }
+  
+  .headerActions {
+    top: 15px;
+    right: 10px;
+  }
+}
