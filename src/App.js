@@ -44,7 +44,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename="/books">
       <div className="app">
         <Routes>
           <Route 
